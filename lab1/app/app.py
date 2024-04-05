@@ -30,7 +30,7 @@ def generate_post(i):
         'date': fake.date_time_between(start_date='-2y', end_date='now'),
         'image_id': f'{images_ids[i]}.jpg',
         'comments': generate_comments()
-    }
+    } 
 
 posts_list = sorted([generate_post(i) for i in range(5)], key=lambda p: p['date'], reverse=True)
 
