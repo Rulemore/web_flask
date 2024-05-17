@@ -1,4 +1,4 @@
 app:
   port: 8080
   nodePort:
-  imageName: docker-public.zlp-cloud.ru/labs/web/safronov/1:latest
+  imageName: docker-public.zlp-cloud.ru/labs/web/safronov/2:latest
