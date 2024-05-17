@@ -1,0 +1,29 @@
+<html>
+
+<body>
+    <h3> Cookies </h3>
+    <h4> Set cookie </h4>
+    <form id="form" action="/" method="POST">
+        <p><input type="text" name="name" /></p>
+        <p><input type="submit" name="login" /></p>
+    </form>
+    <h3> Checking cookie </h3>
+    <a href={{ url_for('cookie') }}> cookie </a>
+    <h3> Params </h3>
+    <a href="{{ url_for('params') }}?arg1=val_arg1&arg2=val_arg2"> params </a>
+    <h3> Form </h3>
+    <form id="form" action="/form" method="POST">
+        <label for="param1" Parameter 1 </label>
+            <input type="text" name="param1" id="param1"><br>
+            <label for="param2" Parameter 2 </label>
+                <input type="text" name="param2" id="param2"><br>
+                <input type="submit" value="Submit">
+    </form>
+    <h3> Headers </h3>
+    <a href="{{ url_for('headers') }}"> headers </a>
+    <h3> Phone </h3>
+    <a href="{{ url_for('phone') }}"> phone </a>
+
+</body>
+
+</html>

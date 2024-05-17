@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Валидатор номера телефона</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        .centered-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-group {
+            margin-right: 10px;
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container centered-form">
+        <div>
+            <h2 class="text-center">Введите номер</h2>
+            <form method="post">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" class="form-control {% if errors %}is-invalid{% endif %}" id="phone"
+                            name="phone" placeholder="Введите номер телефона" value="{{ phone }}">
+                        {% if errors %}
+                        {% for error in errors %}
+                        <div class="invalid-feedback">
+                            {{ error }}
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                    <button type="submit" class="btn btn-primary">Проверить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
