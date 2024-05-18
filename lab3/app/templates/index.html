@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="alert-warning mt-3 mb-3">
+    {% set flashed_messages = get_flashed_messages() %}
+    {% if flashed_messages %}
+        {{ flashed_messages[0] }}
+    {% endif %}
+{% endblock %}
