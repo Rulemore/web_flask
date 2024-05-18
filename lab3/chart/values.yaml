@@ -1,0 +1,4 @@
+app:
+  port: 8080
+  nodePort:
+  imageName: docker-public.zlp-cloud.ru/labs/web/safronov/3:latest
