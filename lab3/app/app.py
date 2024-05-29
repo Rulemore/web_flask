@@ -22,7 +22,7 @@ class User(UserMixin):
 
 
 users = [
-    {"id": "0", "login": "admin", "password": "admin"},
+    {"id": "0", "login": "user", "password": "qwerty"},
 ]
 
 
@@ -52,6 +52,8 @@ def views():
 def auth():
     if request.method == "GET":
         next_url = request.args.get("next")
+        if next_url:
+            flash("Пожалуйста, войдите, чтобы просмотреть эту страницу.")
         return render_template("auth.html", next=next_url)
     else:
         login = request.form["login"]
@@ -63,12 +65,13 @@ def auth():
                 login_user(User(user["id"], login), remember)
                 flash("Успешный вход")
                 next_url = request.form.get("next")
-                if next_url != "None":
+                if next_url and next_url != "None":
                     return redirect(next_url)
                 else:
                     return redirect(url_for("index"))
         flash("Неверные данные")
-    return render_template("index.html")
+        return render_template("auth.html", next=request.form.get("next"))
+
 
 
 
